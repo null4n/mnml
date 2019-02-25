@@ -15,8 +15,10 @@
  */
 package com.afollestad.mnmlscreenrecord.ui.settings.sub
 
-import android.content.pm.PackageManager.FEATURE_MICROPHONE
+import android.Manifest
+import android.content.pm.PackageManager
 import android.os.Bundle
+import androidx.core.content.ContextCompat
 import androidx.preference.SwitchPreference
 import com.afollestad.assent.Permission.RECORD_AUDIO
 import com.afollestad.assent.runWithPermissions
@@ -74,9 +76,9 @@ class SettingsRecordingFragment : BaseSettingsFragment() {
   }
 
   private fun setupRecordAudioPref() {
-    val micPresent = settingsActivity.packageManager.hasSystemFeature(FEATURE_MICROPHONE)
+    val micPresent = ContextCompat.checkSelfPermission(settingsActivity, Manifest.permission.CAPTURE_AUDIO_OUTPUT)
     val recordAudioEntry = findPreference(PREF_RECORD_AUDIO) as SwitchPreference
-    if (!micPresent) {
+    if (micPresent != PackageManager.PERMISSION_GRANTED) {
       recordAudioEntry.run {
         isEnabled = false
         summary = getString(R.string.setting_record_audio_no_mic)

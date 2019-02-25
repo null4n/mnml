@@ -18,7 +18,7 @@ package com.afollestad.mnmlscreenrecord.engine.capture
 import android.content.Context
 import android.media.MediaRecorder
 import android.media.MediaRecorder.AudioEncoder.AAC
-import android.media.MediaRecorder.AudioSource.MIC
+import android.media.MediaRecorder.AudioSource.REMOTE_SUBMIX
 import android.media.MediaRecorder.OutputFormat.MPEG_4
 import android.media.MediaRecorder.VideoEncoder.H264
 import android.media.MediaRecorder.VideoSource.SURFACE
@@ -36,12 +36,12 @@ internal fun RealCaptureEngine.createAndPrepareRecorder(context: Context): Boole
     setVideoSource(SURFACE)
     if (recordAudioPref.get()) {
       try {
-        log("Enabling the microphone")
-        setAudioSource(MIC)
-        log("Recording audio from the mic")
+        log("Enabling internal audio")
+        setAudioSource(REMOTE_SUBMIX)
+        log("Recording audio from internal audio")
       } catch (t: Throwable) {
         recorder = null
-        onError.onNext(Exception("Unable to set the audio source to your microphone!", t))
+        onError.onNext(Exception("Unable to set the audio source to internal audio!", t))
         return false
       }
     }
