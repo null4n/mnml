@@ -54,6 +54,7 @@ internal fun RealCaptureEngine.createAndPrepareRecorder(context: Context): Boole
     setVideoEncoder(H264)
     if (recordAudioPref.get()) {
       setAudioEncoder(AAC)
+      setAudioSamplingRate(44100)
     }
 
     setVideoSize(recordingInfo.width, recordingInfo.height)
