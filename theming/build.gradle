@@ -14,20 +14,16 @@ android {
 }
 
 dependencies {
-  implementation project(':common')
-
-  // Needed for md_ attributes in styles.xml
-  implementation 'com.afollestad.material-dialogs:core:' + versions.materialDialogs
-
-  // Kotlin
-  implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:' + versions.kotlin
-
-  // Google/AndroidX
-  api 'com.google.android.material:material:' + versions.androidxMaterial
-
-  // Testing
-  testImplementation 'junit:junit:' + versions.junit
-  testImplementation 'com.google.truth:truth:' + versions.truth
+    implementation project(':common')
+    // Needed for md_ attributes in styles.xml
+    implementation 'com.afollestad.material-dialogs:core:' + versions.materialDialogs
+    // Kotlin
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:' + versions.kotlin
+    // Google/AndroidX
+    api 'com.google.android.material:material:' + versions.androidxMaterial
+    // Testing
+    testImplementation 'junit:junit:' + versions.junit
+    testImplementation 'com.google.truth:truth:' + versions.truth
 }
 
 apply from: '../spotless.gradle'

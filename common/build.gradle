@@ -14,23 +14,19 @@ android {
 }
 
 dependencies {
-  // Kotlin
-  implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:' + versions.kotlin
-  implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:' + versions.coroutines
-  implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:' + versions.coroutines
-
-  // Google/AndroidX
-  api 'androidx.appcompat:appcompat:' + versions.androidxCore
-  implementation 'androidx.recyclerview:recyclerview:' + versions.androidxRecyclerView
-
-  // Koin
-  api 'org.koin:koin-android:' + versions.koin
-
-  // afollestad
-  api 'com.afollestad:rxkprefs:' + versions.rxkPrefs
-
-  // Debug
-  api 'com.jakewharton.timber:timber:' + versions.timber
+    // Kotlin
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:' + versions.kotlin
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:' + versions.coroutines
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:' + versions.coroutines
+    // Google/AndroidX
+    api 'androidx.appcompat:appcompat:' + versions.androidxCore
+    implementation 'androidx.recyclerview:recyclerview:' + versions.androidxRecyclerView
+    // Koin
+    api 'org.koin:koin-android:' + versions.koin
+    // afollestad
+    api 'com.afollestad:rxkprefs:' + versions.rxkPrefs
+    // Debug
+    api 'com.jakewharton.timber:timber:' + versions.timber
 }
 
 apply from: '../spotless.gradle'

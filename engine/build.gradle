@@ -14,24 +14,17 @@ android {
 }
 
 dependencies {
-  implementation project(':common')
-  implementation project(':notifications')
-  implementation project(':theming')
-
-  // Kotlin
-  implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:' + versions.kotlin
-
-  // afollestad
-  implementation 'com.afollestad.material-dialogs:core:' + versions.materialDialogs
-  implementation 'com.afollestad:assent:' + versions.assent
-
-  // Square
-  implementation 'com.squareup:seismic:' + versions.seismic
-
-  // Debug
-  implementation("com.crashlytics.sdk.android:crashlytics:${versions.fabric}") {
-    transitive = true
-  }
+    implementation project(':common')
+    implementation project(':notifications')
+    implementation project(':theming')
+    // Kotlin
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:' + versions.kotlin
+    // afollestad
+    implementation 'com.afollestad.material-dialogs:core:' + versions.materialDialogs
+    implementation 'com.afollestad:assent:' + versions.assent
+    // Square
+    implementation 'com.squareup:seismic:' + versions.seismic
+    // Debug
 }
 
 apply from: '../spotless.gradle'

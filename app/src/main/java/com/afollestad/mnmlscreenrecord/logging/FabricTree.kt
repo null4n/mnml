@@ -13,13 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.afollestad.mnmlscreenrecord.logging
+//package com.afollestad.mnmlscreenrecord.logging
 
-import com.crashlytics.android.Crashlytics
-import timber.log.Timber
+//iport com.crashlytics.android.Crashlytics
+//import timber.log.Timber
 
 /** @author Aidan Follestad (@afollestad) */
-class FabricTree : Timber.Tree() {
+/*class FabricTree : Timber.Tree() {
 
   override fun log(
     priority: Int,
@@ -34,4 +34,4 @@ class FabricTree : Timber.Tree() {
       Crashlytics.log(priority, tag, message)
     }
   }
-}
+}*/

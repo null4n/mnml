@@ -18,14 +18,14 @@ android {
     versionName versions.publishVersion
   }
 
-  buildTypes {
+  /*buildTypes {
     debug {
       buildConfigField "String", "FABRIC_API_KEY", "\"\""
     }
     release {
       buildConfigField "String", "FABRIC_API_KEY", "\"${getFabricApiKey()}\""
     }
-  }
+  }*/
 }
 
 dependencies {
@@ -33,39 +33,28 @@ dependencies {
   implementation project(':common')
   implementation project(':notifications')
   implementation project(':theming')
-
   // Kotlin
   implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:' + versions.kotlin
   implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:' + versions.coroutines
   implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:' + versions.coroutines
-
   // Google/AndroidX
   implementation 'androidx.preference:preference:' + versions.androidxPrefs
   implementation 'androidx.lifecycle:lifecycle-extensions:' + versions.lifecycle
   kapt 'androidx.lifecycle:lifecycle-compiler:' + versions.lifecycle
   implementation 'androidx.browser:browser:' + versions.androidxBrowser
-
   // Koin
   implementation 'org.koin:koin-androidx-scope:' + versions.koin
   implementation 'org.koin:koin-androidx-viewmodel:' + versions.koin
-
   // afollestad
   implementation 'com.afollestad.material-dialogs:core:' + versions.materialDialogs
   implementation 'com.afollestad.material-dialogs:files:' + versions.materialDialogs
   implementation 'com.afollestad:assent:' + versions.assent
-
   // RxJava
   implementation 'io.reactivex.rxjava2:rxandroid:' + versions.rxAndroid
-
   // Glide
   implementation 'com.github.bumptech.glide:glide:' + versions.glide
   kapt 'com.github.bumptech.glide:compiler:' + versions.glide
-
   // Debug
-  implementation("com.crashlytics.sdk.android:crashlytics:${versions.fabric}") {
-    transitive = true
-  }
-
   // Test
   testImplementation 'junit:junit:' + versions.junit
   testImplementation 'org.mockito:mockito-core:' + versions.mockito

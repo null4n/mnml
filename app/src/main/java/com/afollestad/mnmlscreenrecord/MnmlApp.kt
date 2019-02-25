@@ -24,11 +24,11 @@ import com.afollestad.mnmlscreenrecord.common.prefModule
 import com.afollestad.mnmlscreenrecord.di.mainModule
 import com.afollestad.mnmlscreenrecord.di.viewModelModule
 import com.afollestad.mnmlscreenrecord.engine.engineModule
-import com.afollestad.mnmlscreenrecord.logging.FabricTree
+//import com.afollestad.mnmlscreenrecord.logging.FabricTree
 import com.afollestad.mnmlscreenrecord.notifications.Notifications
 import com.afollestad.mnmlscreenrecord.notifications.notificationsModule
-import com.crashlytics.android.Crashlytics
-import io.fabric.sdk.android.Fabric
+//import com.crashlytics.android.Crashlytics
+//import io.fabric.sdk.android.Fabric
 import org.koin.android.ext.android.inject
 import org.koin.android.ext.android.startKoin
 import timber.log.Timber
@@ -44,10 +44,10 @@ class MnmlApp : Application() {
       Timber.plant(DebugTree())
     }
 
-    if (BuildConfig.FABRIC_API_KEY.isNotEmpty()) {
+    /*if (BuildConfig.FABRIC_API_KEY.isNotEmpty()) {
       Timber.plant(FabricTree())
       Fabric.with(this, Crashlytics())
-    }
+    }*/
 
     val modules = listOf(
       commonModule,

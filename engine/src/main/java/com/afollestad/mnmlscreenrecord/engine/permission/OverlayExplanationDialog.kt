@@ -26,7 +26,7 @@ import com.afollestad.materialdialogs.MaterialDialog
 import com.afollestad.materialdialogs.callbacks.onCancel
 import com.afollestad.materialdialogs.callbacks.onDismiss
 import com.afollestad.mnmlscreenrecord.engine.R
-import com.crashlytics.android.Crashlytics
+//import com.crashlytics.android.Crashlytics
 import java.lang.reflect.InvocationTargetException
 
 interface OverlayExplanationCallback {
@@ -45,7 +45,7 @@ class OverlayExplanationDialog : DialogFragment() {
       try {
         dialog.show(context.supportFragmentManager, TAG)
       } catch (_: java.lang.IllegalStateException) {
-        Crashlytics.log("Not showing OverlayExplanationDialog due to IllegalStateException.")
+        //Crashlytics.log("Not showing OverlayExplanationDialog due to IllegalStateException.")
       }
     }
 
@@ -54,7 +54,7 @@ class OverlayExplanationDialog : DialogFragment() {
       try {
         dialog.show(context.childFragmentManager, TAG)
       } catch (_: java.lang.IllegalStateException) {
-        Crashlytics.log("Not showing OverlayExplanationDialog due to IllegalStateException.")
+        //Crashlytics.log("Not showing OverlayExplanationDialog due to IllegalStateException.")
       }
     }
   }
